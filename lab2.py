@@ -2,13 +2,14 @@
 Author(s):   Samantha Vialpando, Noah Webb
 Assignment:  Lab 2
 Date:        Sept. 29, 2026
-Description: This program will be a log, of
-             each time a student submits their grades. 
-             It will display the date and time of the 
-             submission, and all of the known grades.
-Input:
-Output: 
-References:
+Description: This program is a credit calculator
+             that takes the user's name, total credits,
+             and prints a reciept for that term and the
+             total cost of the credits.
+Input:       string name, term
+             int credits
+Output:      int credit_price
+References:  Lab 2 specifications, week 2 modules
 '''
 from datetime import date, time, datetime
 # Noah
