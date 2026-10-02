@@ -63,12 +63,24 @@ def display_menu(term):
     print("2. Winter")
     print("3. Spring")
     print("4. Summer")
-    term = int(input("Select 1, 2, 3, or 4: "))
+    temp_val = int(input("Select 1, 2, 3, or 4: "))
+    while temp_val > 4 or temp_val < 1:
+      print("Invalid input!")
+      temp_val = int(input("Must enter 1, 2, 3, 4: "))
+    
+    if temp_val == 1:
+      term = "Fall"
+    elif temp_val == 2:
+      term = "Winter"
+    elif temp_val == 3:
+      term = "Spring"
+    else:
+      term = "Summer"
     return term
 
 # Noah
 def main():
-    credits, term = 0, 0
+    credits = 0
     price = 244.78
     welcome_message()
     
