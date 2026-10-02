@@ -104,8 +104,8 @@ def print_receipt(name, term, classes_counter, credits, total):
     print("Date:", current_datetime)
     print("{: <17}{: <3}".format("Name: ", name.capitalize()))
     print("{: <17}{: <3}".format("Term: ", term))
-    print('{: >15}{: <1}'.format(("Classes: "), classes_counter))
-    print('{: >17}{: <1}'.format("Total credits: ",credits))
+    print("{: <17}{: <3}".format(("Classes: "), classes_counter))
+    print("{: <17}{: <3}".format("Total credits: ", credits))
     print(f"Your total is: ${round(total,2):.2f}")
     print("-------------------------")
 
