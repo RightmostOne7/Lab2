@@ -11,7 +11,7 @@ Input:       string name, term
 Output:      int credit_price
 References:  Lab 2 specifications, week 2 modules
 '''
-from datetime import date, time, datetime
+from datetime import datetime
 
 # Samantha
 def welcome_message():
@@ -102,7 +102,8 @@ def print_receipt(name, term, classes_counter, credits, total):
     print("\nThank you for using the credit calculator!")
     print("\n-------- Receipt --------")
     print("Date:", current_datetime)
-    print("{: <17}{: <3}".format(name.capitalize(), term))
+    print("{: <17}{: <3}".format("Name: ", name.capitalize()))
+    print("{: <17}{: <3}".format("Term: ", term))
     print('{: >15}{: <1}'.format(("Classes: "), classes_counter))
     print('{: >17}{: <1}'.format("Total credits: ",credits))
     print(f"Your total is: ${round(total,2):.2f}")
@@ -121,7 +122,7 @@ def main():
     credits, classes_counter = get_credits(credits, classes_counter)
     total = total_price(credits, price)
 
-    print_receipt(name, term,classes_counter, credits, total)
+    print_receipt(name, term, classes_counter, credits, total)
 
 if __name__ == "__main__":
     main()
