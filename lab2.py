@@ -17,7 +17,7 @@ def credit_price(credits, price):
     credit_price = credits * price
     return credit_price
 
-def get_credits(credits):
+def get_credits(credits, classes_counter):
     '''
     this function asks the user to input a number of credits
     per term. It allows the user to input mulitple times to
@@ -27,6 +27,7 @@ def get_credits(credits):
     '''
     more_credits = "yes"
     while more_credits == "yes" or more_credits == "y":
+        classes_counter += 1
         temp_var = int(input("Enter the number of credits for a class: "))
         if credits + temp_var >= 18:
             print("You have reached the maximum number of credits (18). You cannot add more.")
@@ -39,7 +40,7 @@ def get_credits(credits):
             print("Invalid input. Please enter 'yes' or 'no'.")
             more_credits = input("Would you like to input more credits? (y/n): ")
 
-    return credits
+    return credits, classes_counter
 
 # samantha
 def welcome_message():
@@ -52,7 +53,7 @@ def welcome_message():
           "Follow the prompts below.\n")
 
 #samantha
-def display_menu(term):
+def display_menu():
     '''
     This function displays a menu of term options to the user.
     params: none
@@ -80,13 +81,13 @@ def display_menu(term):
 
 # Noah
 def main():
-    credits = 0
+    credits, classes_counter = 0, 0
     price = 244.78
     welcome_message()
     
     name = str(input("Enter your name: "))
-    term = display_menu(term)
-    credits = get_credits(credits)
+    term = display_menu()
+    credits = get_credits(credits, classes_counter)
 
 
     # this print statement we will eventually replace with a 
